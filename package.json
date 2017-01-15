@@ -1,0 +1,11 @@
+{
+  "name": "alexa-cleverbot",
+  "version": "0.0.1",
+  "description": "Cleverbot integration with Alexa",
+  "license": "MIT",
+  "author": "Richard Solomou <richard@richardsolomou.com>",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:richardsolomou/alexa-cleverbot.git"
+  }
+}
