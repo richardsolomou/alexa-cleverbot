@@ -3,10 +3,10 @@ const router  = require('../../alexa/router.js');
 
 module.exports = (params, callback) =>
 {
-  router(params, (err, result) =>
+  router(params, (err, result, shouldEndSession) =>
   {
     err
       ? respond.error(err, callback)
-      : respond.say(result, callback);
+      : respond.say(result, callback, shouldEndSession);
   });
 };

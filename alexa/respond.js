@@ -1,9 +1,9 @@
 module.exports = {
   error: function (err, callback)
   {
-    return this.say(`Error: ${err.message}`, callback);
+    return this.say(`Error: ${err.message}`, callback, true);
   },
-  say: function (body, callback)
+  say: function (body, callback, shouldEndSession)
   {
     callback(null, {
       version: 'dev',
@@ -13,7 +13,7 @@ module.exports = {
           type: 'PlainText',
           text: body || 'invalid response'
         },
-        shouldEndSession: false
+        shouldEndSession: Boolean(shouldEndSession)
       }
     });
   }

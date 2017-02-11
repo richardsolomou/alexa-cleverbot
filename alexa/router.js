@@ -4,22 +4,27 @@ const intents = {};
 module.exports = function (params, callback)
 {
   let request = params.kwargs.request || {};
+  let name, slots;
 
   if (!request.intent && params.args[0]) {
     request.intent = {
       name: params.args[0],
       slots: Object.keys(params.kwargs).reduce((slots, key) =>
       {
-        slots[key] = { name: key, value: params.kwargs[key] };
+        slots[key] = {
+          name: key,
+          value: params.kwargs[key]
+        };
+
         return slots;
       }, {})
     };
   }
 
-  let name  = (request && request.intent && request.intent.name) || '*';
-  let slots = (request && request.intent && request.intent.slots) || {};
+  name  = (request && request.intent && request.intent.name) || 'SayIntent';
+  slots = (request && request.intent && request.intent.slots) || {};
 
-  if (name !== '*' && !(name + '').match(/^[A-Z0-9-]*$/i)) {
+  if (!(name + '').match(/^[A-Z0-9-]*$/i)) {
     return callback(new Error('Invalid intent name'));
   }
 
