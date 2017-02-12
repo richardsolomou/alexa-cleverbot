@@ -11,7 +11,7 @@ module.exports = {
    */
   addInteraction: function (request, response)
   {
-    session.conversations.push({ request, response });
+    session.conversations.unshift({ request, response });
   },
 
   /**
