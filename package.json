@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "cleverbot.io": "^1.0.4",
+    "leven": "^2.0.0",
     "lib": "^2.0.0"
   },
   "devDependencies": {
