@@ -1,19 +1,21 @@
 # alexa-cleverbot
 
 ## Environment
-Add this to your `.env.json`
+Add this to your `env.json`
 ```json
 {
   "dev": {
     "cleverbot": {
-      "user": "YOUR_API_USER",
-      "key": "YOUR_API_KEY"
+      "user": "CLEVERBOT_API_USER",
+      "key": "CLEVERBOT_API_KEY",
+      "nick": "SESSION_NICKNAME"
     }
   },
   "release": {
     "cleverbot": {
-      "user": "YOUR_API_USER",
-      "key": "YOUR_API_KEY"
+      "user": "CLEVERBOT_API_USER",
+      "key": "CLEVERBOT_API_KEY",
+      "nick": "SESSION_NICKNAME"
     }
   }
 }
