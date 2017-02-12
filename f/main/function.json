@@ -1,0 +1,13 @@
+{
+  "name": "main",
+  "description": "Function",
+  "args": [
+    "SayIntent"
+  ],
+  "kwargs": {
+    "say": "Hello"
+  },
+  "http": {
+    "headers": {}
+  }
+}
