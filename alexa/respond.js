@@ -1,19 +1,48 @@
+const session = require('./session');
+
 module.exports = {
-  error: function (err, callback)
+  /**
+   * Tell
+   *
+   * @param {String}   response
+   * @param {Function} callback
+   *
+   * @returns {Function}
+   */
+  tell: function (response, callback)
   {
-    return this.say(`Error: ${err.message}`, callback, true);
-  },
-  say: function (body, callback, shouldEndSession)
-  {
-    callback(null, {
+    return callback(null, {
       version: 'dev',
-      sessionAttributes: {},
+      sessionAttributes: session.getSession(),
       response: {
         outputSpeech: {
           type: 'PlainText',
-          text: body || 'invalid response'
+          text: response || 'invalid response'
         },
-        shouldEndSession: Boolean(shouldEndSession)
+        shouldEndSession: true
+      }
+    });
+  },
+
+  /**
+   * Ask
+   *
+   * @param {String}   response
+   * @param {Function} callback
+   *
+   * @returns {Function}
+   */
+  ask: function (response, callback)
+  {
+    return callback(null, {
+      version: 'dev',
+      sessionAttributes: session.getSession(),
+      response: {
+        outputSpeech: {
+          type: 'PlainText',
+          text: response || 'invalid response'
+        },
+        shouldEndSession: false
       }
     });
   }

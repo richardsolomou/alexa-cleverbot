@@ -5,8 +5,7 @@
     "SayIntent"
   ],
   "kwargs": {
-    "SayIntent": "Keyword argument alpha",
-    "beta": "Keyword argument beta"
+    "say": "Hello"
   },
   "http": {
     "headers": {}
