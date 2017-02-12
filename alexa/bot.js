@@ -1,5 +1,5 @@
 const cleverbot = require('cleverbot.io');
-const bot       = new cleverbot('G7kEL12aX2wMUmIk', 'Wu50DJxP1lBERF1PKkgWbevTDbmaFhNo');
+const bot       = new cleverbot(process.env.cleverbot.user, process.env.cleverbot.key);
 
 bot.setNick('Alexa-' + Math.random());
 
