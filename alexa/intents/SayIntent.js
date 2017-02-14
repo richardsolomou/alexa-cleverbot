@@ -12,7 +12,7 @@ module.exports = function (slots, callback)
 
   promise = bot(slot);
 
-  promise.then(function (val)
+  promise.then((val) =>
   {
     session.addInteraction(slot, val);
 
