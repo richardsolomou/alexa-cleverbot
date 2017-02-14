@@ -25,7 +25,7 @@ module.exports = function (params, callback)
   slots = (request && request.intent && request.intent.slots) || {};
 
   if (!(name + '').match(/^[A-Z0-9-]*$/i)) {
-    return callback(new Error('Invalid intent name'));
+    return callback(null, 'Goodbye', true);
   }
 
   if (!intents[name] && !fs.existsSync(`./alexa/intents/${name}.js`)) {

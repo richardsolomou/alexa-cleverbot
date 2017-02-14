@@ -1,6 +1,6 @@
 {
   "name": "alexa-cleverbot",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Cleverbot integration with Alexa",
   "license": "MIT",
   "author": "Richard Solomou <richard@richardsolomou.com>",
@@ -17,7 +17,6 @@
   },
   "dependencies": {
     "cleverbot.io": "^1.0.4",
-    "leven": "^2.0.0",
     "lib": "^2.0.0"
   },
   "devDependencies": {
