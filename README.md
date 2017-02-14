@@ -2,7 +2,7 @@
 
 ## Setup
 
-Check out this [guide](https://hackernoon.com/build-an-alexa-skill-in-7-minutes-flat-with-node-js-and-stdlib-70611f58c37f) on getting started with StdLib.
+Check out this [guide](https://hackernoon.com/build-an-alexa-skill-in-7-minutes-flat-with-node-js-and-stdlib-70611f58c37f) on getting started with StdLib. 
 
 Sign in to the [Alexa Skills Kit](https://developer.amazon.com/edw/home.html#/skills/list) and add a new skill named `Cleverbot` with this custom interaction model:
 
@@ -45,6 +45,7 @@ Point the HTTPS endpoint to your StdLib account's instance of `alexa-cleverbot` 
 
 ## Environment
 
+Create a [cleverbot.io](https://cleverbot.io/login) account for API credentials
 ```
 // env.json
 {
