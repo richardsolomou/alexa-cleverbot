@@ -1,53 +1,18 @@
 # alexa-cleverbot
 
-## Setup
+## Getting started
 
-Check out this [guide](https://hackernoon.com/build-an-alexa-skill-in-7-minutes-flat-with-node-js-and-stdlib-70611f58c37f) on getting started with StdLib. 
+Install StdLib CLI tools:
 
-Sign in to the [Alexa Skills Kit](https://developer.amazon.com/edw/home.html#/skills/list) and add a new skill named `Cleverbot` with this custom interaction model:
-
-```
-// Intent Schema
-{
-  "intents": [
-    {
-      "intent": "SayIntent",
-      "slots": [
-        {
-          "name": "say",
-          "type": "SAY"
-        }
-      ]
-    },
-    {
-      "intent": "AMAZON.StopIntent"
-    }
-  ]
-}
+```bash
+$ npm install lib.cli -g
 ```
 
-```
-// Sample Utterances
-SayIntent {say}
-```
+## Setup environment
 
-Create a custom slot type called `SAY` with the values:
-```
-what
-who
-where
-when
-why
-how
-```
+Create a file named `env.json` and copy in your [cleverbot.io](https://cleverbot.io/login) API credentials:
 
-Point the HTTPS endpoint to your StdLib account's instance of `alexa-cleverbot` (e.g. `https://stdlib_username.stdlib.com/alexa-cleverbot@dev`).
-
-## Environment
-
-Create a [cleverbot.io](https://cleverbot.io/login) account for API credentials
 ```
-// env.json
 {
   "dev": {
     "cleverbot": {
@@ -66,8 +31,69 @@ Create a [cleverbot.io](https://cleverbot.io/login) account for API credentials
 }
 ```
 
-Deploy development version to the HTTPS endpoint
+## Deploy skill
+
+Create an [StdLib](http://stdlib.com/) account and modify the `stdlib` object in `package.json` to match your username. Then, deploy the development version:
 
 ```bash
 $ lib up dev
+```
+
+## Create skill
+
+Sign in to the [Alexa Skills Kit](https://developer.amazon.com/edw/home.html#/skills/list) and add a new skill named `Cleverbot` with the following custom interaction model:
+
+### Intent schema
+
+```
+{
+  "intents": [
+    {
+      "intent": "SayIntent",
+      "slots": [
+        {
+          "name": "say",
+          "type": "SAY"
+        }
+      ]
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    }
+  ]
+}
+```
+
+### Custom slot types
+
+Create a custom slot type called `SAY` with some random values:
+```
+what
+who
+where
+when
+why
+how
+```
+
+### Sample utterances
+
+```
+SayIntent {say}
+```
+
+### Configuration
+
+Point the HTTPS endpoint to your StdLib account's instance of `alexa-cleverbot` (e.g. `https://stdlib_username.stdlib.com/alexa-cleverbot@dev`).
+
+## Testing the skill
+
+Test skill locally
+
+```bash
+$ lib .
+```
+
+```bash
+$ lib . SayIntent --say Hello
 ```
